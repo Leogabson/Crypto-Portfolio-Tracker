@@ -1,0 +1,264 @@
+crypto-portfolio-tracker/
+├── public/
+│   ├── favicon.ico
+│   └── logo.svg
+│
+├── src/
+│   ├── assets/
+│   │   ├── icons/
+│   │   │   ├── bitcoin.svg
+│   │   │   ├── ethereum.svg
+│   │   │   └── ...
+│   │   └── images/
+│   │       ├── empty-state.svg
+│   │       └── error-illustration.svg
+│   │
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Button.jsx
+│   │   │   ├── Card.jsx
+│   │   │   ├── Input.jsx
+│   │   │   ├── Modal.jsx
+│   │   │   ├── Table.jsx
+│   │   │   ├── Skeleton.jsx
+│   │   │   ├── Badge.jsx
+│   │   │   ├── Tooltip.jsx
+│   │   │   └── SearchBar.jsx
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── Layout.jsx
+│   │   │   └── Footer.jsx
+│   │   │
+│   │   ├── dashboard/
+│   │   │   ├── PortfolioOverview.jsx
+│   │   │   ├── PortfolioChart.jsx
+│   │   │   ├── TopMovers.jsx
+│   │   │   ├── QuickStats.jsx
+│   │   │   └── RecentActivity.jsx
+│   │   │
+│   │   ├── portfolio/
+│   │   │   ├── AssetList.jsx
+│   │   │   ├── AssetCard.jsx
+│   │   │   ├── AddAssetModal.jsx
+│   │   │   ├── EditAssetModal.jsx
+│   │   │   └── PortfolioDistribution.jsx
+│   │   │
+│   │   ├── markets/
+│   │   │   ├── MarketTable.jsx
+│   │   │   ├── MarketFilters.jsx
+│   │   │   ├── CoinRow.jsx
+│   │   │   └── PriceChart.jsx
+│   │   │
+│   │   ├── watchlist/
+│   │   │   ├── WatchlistGrid.jsx
+│   │   │   ├── WatchlistItem.jsx
+│   │   │   └── AddToWatchlist.jsx
+│   │   │
+│   │   ├── alerts/
+│   │   │   ├── AlertList.jsx
+│   │   │   ├── CreateAlert.jsx
+│   │   │   └── AlertCard.jsx
+│   │   │
+│   │   └── charts/
+│   │       ├── LineChart.jsx
+│   │       ├── AreaChart.jsx
+│   │       ├── DonutChart.jsx
+│   │       ├── SparklineChart.jsx
+│   │       └── CandlestickChart.jsx
+│   │
+│   ├── pages/
+│   │   ├── Dashboard.jsx
+│   │   ├── Portfolio.jsx
+│   │   ├── Markets.jsx
+│   │   ├── Watchlist.jsx
+│   │   ├── Alerts.jsx
+│   │   ├── AssetDetail.jsx
+│   │   └── NotFound.jsx
+│   │
+│   ├── hooks/
+│   │   ├── useCryptoData.js
+│   │   ├── usePortfolio.js
+│   │   ├── useWatchlist.js
+│   │   ├── useAlerts.js
+│   │   ├── useLocalStorage.js
+│   │   ├── useDebounce.js
+│   │   ├── useInfiniteScroll.js
+│   │   └── useWebSocket.js
+│   │
+│   ├── services/
+│   │   ├── api/
+│   │   │   ├── coinGecko.js
+│   │   │   ├── endpoints.js
+│   │   │   └── axios.config.js
+│   │   └── notifications/
+│   │       └── toast.js
+│   │
+│   ├── context/
+│   │   ├── PortfolioContext.jsx
+│   │   ├── ThemeContext.jsx
+│   │   └── WatchlistContext.jsx
+│   │
+│   ├── utils/
+│   │   ├── formatters.js          # Format currency, percentages, numbers
+│   │   ├── calculations.js        # Portfolio calculations, ROI, etc.
+│   │   ├── validators.js          # Input validation
+│   │   ├── constants.js           # App constants, API keys
+│   │   ├── sorting.js             # Table sorting logic
+│   │   └── helpers.js             # General helper functions
+│   │
+│   ├── styles/
+│   │   ├── index.css              # Tailwind imports + global styles
+│   │   └── animations.css         # Custom animations
+│   │
+│   ├── router/
+│   │   ├── index.jsx              # Route definitions
+│   │   └── ProtectedRoute.jsx     # Route guards (if needed)
+│   │
+│   ├── data/
+│   │   ├── mockData.js            # Mock data for development
+│   │   └── defaultAssets.js       # Default crypto assets
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── .env.example
+├── .env.local
+├── .gitignore
+├── .eslintrc.cjs
+├── .prettierrc
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+
+
+═══════════════════════════════════════════════════════════
+KEY FILE PURPOSES
+═══════════════════════════════════════════════════════════
+
+📁 COMPONENTS BREAKDOWN:
+
+common/          → Reusable UI components (buttons, inputs, cards)
+layout/          → App structure (navbar, sidebar, footer)
+dashboard/       → Dashboard-specific components
+portfolio/       → Portfolio management components
+markets/         → Market data & trading view components
+watchlist/       → Watchlist features
+alerts/          → Price alert components
+charts/          → All chart/visualization components
+
+📁 HOOKS:
+- useCryptoData     → Fetch & cache crypto prices
+- usePortfolio      → Portfolio state management
+- useWatchlist      → Watchlist CRUD operations
+- useAlerts         → Alert management
+- useLocalStorage   → Persist data to localStorage
+- useDebounce       → Debounce search inputs
+- useInfiniteScroll → Load more data on scroll
+- useWebSocket      → Real-time price updates (optional)
+
+📁 SERVICES:
+- coinGecko.js      → API calls to CoinGecko
+- endpoints.js      → API endpoint constants
+- axios.config.js   → Axios instance with interceptors
+- toast.js          → Notification system
+
+📁 UTILS:
+- formatters.js     → formatCurrency(), formatPercent(), formatDate()
+- calculations.js   → calculateROI(), calculateTotal(), getProfitLoss()
+- validators.js     → validateAmount(), validateCoinId()
+- constants.js      → API_BASE_URL, CACHE_TIME, etc.
+
+📁 CONTEXT:
+- PortfolioContext  → Global portfolio state (holdings, total value)
+- ThemeContext      → Dark/light mode toggle
+- WatchlistContext  → Global watchlist state
+
+═══════════════════════════════════════════════════════════
+EXAMPLE FILE CONTENTS
+═══════════════════════════════════════════════════════════
+
+// .env.example
+VITE_COINGECKO_API_URL=https://api.coingecko.com/api/v3
+VITE_ENABLE_MOCK_DATA=false
+
+// vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@utils': path.resolve(__dirname, './src/utils'),
+      '@services': path.resolve(__dirname, './src/services'),
+    }
+  }
+})
+
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#172554',
+        },
+        gain: '#10b981',
+        loss: '#ef4444',
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'slide-in': 'slideIn 0.3s ease-out',
+      },
+      keyframes: {
+        slideIn: {
+          '0%': { transform: 'translateY(-10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        }
+      }
+    }
+  },
+  plugins: [],
+}
+
+═══════════════════════════════════════════════════════════
+DEVELOPMENT WORKFLOW
+═══════════════════════════════════════════════════════════
+
+1. Start with: npm create vite@latest crypto-portfolio-tracker -- --template react
+2. Install dependencies: npm install
+3. Add Tailwind: npm install -D tailwindcss postcss autoprefixer
+4. Add libraries: npm install axios recharts lucide-react react-router-dom
+5. Create folder structure above
+6. Build components from common → complex
+7. Implement API service layer
+8. Connect pages with routing
+9. Add state management (Context API or Zustand)
+10. Polish UI/UX with animations
+
+═══════════════════════════════════════════════════════════
