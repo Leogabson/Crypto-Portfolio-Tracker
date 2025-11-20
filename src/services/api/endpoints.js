@@ -45,7 +45,7 @@ export const buildEndpoint = (endpoint, params = {}) => {
   };
 };
 
-const PARAMS = {
+export const PARAMS = {
   markets: ({
     vsCurrency = "usd",
     ids = null,
