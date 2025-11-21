@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Plus, Trash2, Edit, TrendingUp, Briefcase } from "lucide-react";
 import Card from "@components/common/Card";
 import Button from "@components/common/Button";
-import Modal from "@components/common/Modal";
-import Input from "@components/common/Input";
+import AddAssetModal from "@components/portfolio/AddAssetModal";
 import usePortfolio from "@hooks/usePortfolio";
 import {
   formatCurrency,
@@ -243,16 +242,10 @@ const Portfolio = () => {
         </div>
       </Card>
 
-      <Modal
+      <AddAssetModal
         isOpen={isAddModalOpen}
         onClose={() => setIsAddModalOpen(false)}
-        title="Add Asset to Portfolio"
-      >
-        <p className="text-dark-400 mb-4">Feature coming soon...</p>
-        <Button fullWidth onClick={() => setIsAddModalOpen(false)}>
-          Close
-        </Button>
-      </Modal>
+      />
     </div>
   );
 };
